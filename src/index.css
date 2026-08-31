@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #c6c8ce;
+  background-color: #151515;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #151515;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #f4f0e9;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  border-left: 2px solid #f15a24;
+  padding-left: 1rem;
+  color: #9da5b2;
+}
