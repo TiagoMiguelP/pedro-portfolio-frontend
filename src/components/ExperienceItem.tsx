@@ -7,8 +7,8 @@ function formatDate(dateString?: string | null) {
 }
 
 export function ExperienceItem({ experience }: { experience: ExperienceData }) {
-  const start = formatDate(experience.startDate)
-  const end = experience.endDate ? formatDate(experience.endDate) : 'Present'
+  const start = formatDate(experience.start_date)
+  const end = experience.end_date ? formatDate(experience.end_date) : 'Present'
   const dateLabel = `${start} – ${end}`
 
   return (

@@ -3,13 +3,16 @@ import type { Article, Author } from '../../lib/api';
 import { articlesService } from '../../lib/api';
 import '../admin/AdminCRUD.css';
 
+type AuthorFormData = Omit<Author, 'id' | 'order_index'>;
+type ArticleFormData = Omit<Partial<Article>, 'authors'> & { authors: AuthorFormData[] };
+
 export default function AdminArticles() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState<Partial<Article> & { authors: Omit<Author, 'id' | 'order_index'>[] }>({
+  const [formData, setFormData] = useState<ArticleFormData>({
     title: '',
     journal: '',
     pdf_url: '',
@@ -40,7 +43,7 @@ export default function AdminArticles() {
     setEditingId(article.id);
     setFormData({
       ...article,
-      authors: article.authors?.map((a) => ({ name: a.name, link: a.link })) || [],
+      authors: article.authors?.map(({ name, link }) => ({ name, link })) || [],
     });
     setShowForm(true);
   };

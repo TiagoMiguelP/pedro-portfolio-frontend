@@ -16,7 +16,6 @@ type Tab = 'articles' | 'events' | 'experience' | 'about' | 'contact' | 'links';
 
 export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const [activeTab, setActiveTab] = useState<Tab>('articles');
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleLogout = async () => {

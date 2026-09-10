@@ -3,7 +3,7 @@ import type { ExperienceData } from '../types/index'
 import { ExperienceItem } from './ExperienceItem'
 
 export function Experience({ experiences }: { experiences: ExperienceData[] }) {
-  const sorted = [...experiences].sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
+  const sorted = [...experiences].sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime())
 
   if (!sorted.length) {
     return (
