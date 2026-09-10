@@ -1,12 +1,13 @@
 import { CalendarDays } from 'lucide-react'
-import type { EventData } from '../types/strapi'
+import type { EventData } from '../types/index'
 import { EventItem } from './EventItem'
 
 export function Events({ events }: { events: EventData[] }) {
-  const upcoming = events.filter((event) => new Date(event.endDate) >= new Date()).sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
+  console.log('Events component received events:', events) // Debugging line
+  const upcoming = events.filter((event) => new Date(event.end_date) >= new Date()).sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
   const past = events
-    .filter((event) => new Date(event.endDate) < new Date())
-    .sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
+    .filter((event) => new Date(event.end_date) < new Date())
+    .sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime())
 
   if (!events.length) {
     return (

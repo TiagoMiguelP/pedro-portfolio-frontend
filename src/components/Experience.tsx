@@ -1,5 +1,5 @@
 import { BriefcaseBusiness } from 'lucide-react'
-import type { ExperienceData } from '../types/strapi'
+import type { ExperienceData } from '../types/index'
 import { ExperienceItem } from './ExperienceItem'
 
 export function Experience({ experiences }: { experiences: ExperienceData[] }) {

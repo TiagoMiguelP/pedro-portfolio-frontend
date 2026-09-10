@@ -1,4 +1,4 @@
-import type { ExternalLinkItem } from '../types/strapi'
+import type { ExternalLinkItem } from '../types/index'
 
 export function ExternalLinks({ links }: { links: ExternalLinkItem[] }) {
   if (!links.length) return null

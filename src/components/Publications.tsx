@@ -1,5 +1,5 @@
 import { FileText } from 'lucide-react'
-import type { ArticleData } from '../types/strapi'
+import type { ArticleData } from '../types/index'
 import { PublicationItem } from './PublicationItem'
 
 export function Publications({ articles }: { articles: ArticleData[] }) {

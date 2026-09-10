@@ -1,7 +1,12 @@
-import { fetchStrapi } from './client'
-import type { ArticleData, StrapiListResponse } from '../types/strapi'
+import { articlesService } from '../lib/api'
+import type { ArticleData } from '../types/index'
 
 export async function getArticles(): Promise<ArticleData[]> {
-  const payload = await fetchStrapi<StrapiListResponse<ArticleData>>('/api/articles?sort=date:desc&populate[authors]=*&populate[pdf][fields][0]=url&populate[pdf][fields][1]=alternativeText')
-  return payload.data ?? []
+  try {
+    const articles = await articlesService.getAll(true)
+    return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  } catch (error) {
+    console.error('Error fetching articles:', error)
+    return []
+  }
 }

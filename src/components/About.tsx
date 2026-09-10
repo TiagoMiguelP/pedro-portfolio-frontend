@@ -1,6 +1,6 @@
 import { ArrowRight, FileText, Mail } from 'lucide-react'
 import { RichTextRenderer } from './RichTextRenderer'
-import type { AboutData, ExternalLinkItem } from '../types/strapi'
+import type { AboutData, ExternalLinkItem } from '../types/index'
 
 export function About({ about, links }: { about: AboutData | null; links: ExternalLinkItem[] }) {
   if (!about) {

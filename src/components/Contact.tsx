@@ -1,5 +1,5 @@
 import { ArrowUpRight, Building2, Mail, MapPin } from 'lucide-react'
-import type { ContactData, ExternalLinkItem } from '../types/strapi'
+import type { ContactData, ExternalLinkItem } from '../types/index'
 
 export function Contact({ contact, links }: { contact: ContactData | null; links: ExternalLinkItem[] }) {
   if (!contact && !links.length) return null

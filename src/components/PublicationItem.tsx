@@ -1,9 +1,9 @@
-import type { ArticleData } from '../types/strapi'
+import type { ArticleData } from '../types/index'
 import { getMediaUrl } from '../api/client'
 
 export function PublicationItem({ article }: { article: ArticleData }) {
   const authors = article.authors ?? []
-  const pdfUrl = getMediaUrl(article.pdf?.url) || article.pdfLink
+  const pdfUrl = getMediaUrl(article.pdf_url)
 
   return (
     <article className="group relative rounded-lg border border-[#414141] bg-[#2d2d2d] p-5 transition hover:border-[#626262] sm:p-6 cursor-pointer" onClick={() => {

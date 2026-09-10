@@ -1,7 +1,11 @@
-import { fetchStrapi } from './client'
-import type { ContactData, StrapiSingleResponse } from '../types/strapi'
+import { contactService } from '../lib/api'
+import type { ContactData } from '../types/index'
 
 export async function getContact(): Promise<ContactData | null> {
-  const payload = await fetchStrapi<StrapiSingleResponse<ContactData>>('/api/contact')
-  return payload.data ?? null
+  try {
+    return await contactService.get(true)
+  } catch (error) {
+    console.error('Error fetching contact data:', error)
+    return null
+  }
 }

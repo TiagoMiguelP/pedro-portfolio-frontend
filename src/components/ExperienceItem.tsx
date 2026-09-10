@@ -1,4 +1,4 @@
-import type { ExperienceData } from '../types/strapi'
+import type { ExperienceData } from '../types/index'
 
 function formatDate(dateString?: string | null) {
   if (!dateString) return ''

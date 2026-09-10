@@ -1,7 +1,12 @@
-import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer'
+export function RichTextRenderer({ content }: { content?: string | null }) {
+  if (!content) return null
 
-export function RichTextRenderer({ content }: { content?: BlocksContent | null }) {
-  if (!content?.length) return null
-
-  return <BlocksRenderer content={content} />
+  // Render plain text content with line breaks
+  return (
+    <div className="prose prose-sm">
+      {content.split('\n').map((paragraph, idx) => (
+        <p key={idx}>{paragraph}</p>
+      ))}
+    </div>
+  )
 }

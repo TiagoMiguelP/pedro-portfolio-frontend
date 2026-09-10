@@ -1,9 +1,9 @@
 import { MapPin } from 'lucide-react'
-import type { EventData } from '../types/strapi'
+import type { EventData } from '../types/index'
 
 export function EventItem({ event }: { event: EventData }) {
-  const startDate = new Date(event.startDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
-  const endDate = new Date(event.endDate).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+  const startDate = new Date(event.start_date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+  const endDate = new Date(event.end_date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
 
   return (
     <article className="rounded-lg border border-[#383838] bg-[#202020] p-5 transition hover:border-[#555] sm:p-6">
