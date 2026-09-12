@@ -4,6 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+   base: process.env.NODE_ENV === 'production'
+    ? '/pedro-portfolio-frontend/'
+    : '/',
   server: {
     host: '0.0.0.0',
     port: 5173,
